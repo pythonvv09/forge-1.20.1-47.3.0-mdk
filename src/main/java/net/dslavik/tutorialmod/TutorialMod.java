@@ -30,32 +30,32 @@ public class TutorialMod {
 
         ModItems.register(modEventBus); // новый предмет
 
-        modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(this::commonSetup); // пока-что не знаю
 
-        MinecraftForge.EVENT_BUS.register(this);
-        modEventBus.addListener(this::addCreative);
+        MinecraftForge.EVENT_BUS.register(this); // пока-что не знаю
+        modEventBus.addListener(this::addCreative); // пока-что не знаю
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event) {
+    private void commonSetup(final FMLCommonSetupEvent event) { // ???
 
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ModItems.BAT); // предмет в креативе. можно добавит больше
+            event.accept(ModItems.BAT); // предмет в меню креатива, можно добавит больше предметов
         }
     }
 
     @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {
+    public void onServerStarting(ServerStartingEvent event) { // ???
 
     }
 
-    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT) // ???
     public static class ClientModEvents
     {
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event) {
+        public static void onClientSetup(FMLClientSetupEvent event) { // ???
 
         }
     }

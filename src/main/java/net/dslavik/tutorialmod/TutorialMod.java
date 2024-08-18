@@ -1,6 +1,7 @@
 package net.dslavik.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.dslavik.tutorialmod.item.ModCreativeModTabs;
 import net.dslavik.tutorialmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -19,13 +20,15 @@ import org.slf4j.Logger;
 
 @Mod(TutorialMod.MODID)
 public class TutorialMod {
-    public static final String MODID = "tutorialmod";
+    public static final String MODID = "tutorialmod"; //наш id
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public TutorialMod(){
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ModItems.register(modEventBus);
+        ModCreativeModTabs.register(modEventBus); // новая вкладка в креативе
+
+        ModItems.register(modEventBus); // новый предмет
 
         modEventBus.addListener(this::commonSetup);
 
@@ -39,7 +42,7 @@ public class TutorialMod {
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ModItems.BAT);
+            event.accept(ModItems.BAT); // предмет в креативе. можно добавит больше
         }
     }
 

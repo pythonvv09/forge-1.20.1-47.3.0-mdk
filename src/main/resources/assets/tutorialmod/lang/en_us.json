@@ -1,3 +1,5 @@
 {
-  "item.tutorialmod.bat": "Bat"
+  "item.tutorialmod.bat": "Bat", // перевод нашего предмета
+
+  "creativetab.bat_tab": "TEST" // перевод вкладки
 }
